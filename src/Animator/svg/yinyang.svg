@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 24 24">
+    <g>
+        <defs>
+            <linearGradient x1="0%" y1="0%" x2="100%" y2="0%" id="bgyang">
+                <stop stop-color="hsl(0, 0%, 30%)" stop-opacity="1" offset="0%"></stop>
+                <stop stop-color="hsl(0, 0%, 10%)" stop-opacity="1" offset="100%"></stop>
+            </linearGradient>
+            <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="bgyin">
+                <stop stop-color="hsl(0, 0%, 60%)" stop-opacity="1" offset="0%"></stop>
+                <stop stop-color="hsl(0, 0%, 100%)" stop-opacity="1" offset="100%"></stop>
+            </linearGradient>
+            <filter id="shadow" width="2" height="2" x="-.25" y="-.25">
+                <feGaussianBlur in="SourceAlpha" stdDeviation=".8" result="blur" />
+                <feColorMatrix result="bluralpha" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.4 0" />
+                <feOffset in="bluralpha" dx="0" dy="0" result="offsetBlur" />
+                <feMerge>
+                    <feMergeNode in="offsetBlur" />
+                    <feMergeNode in="SourceGraphic" />
+                </feMerge>
+            </filter>
+            <filter id="f">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+            </filter>
+        </defs>
+        <g id="yang">
+            <!-- <g filter="url(#shadow)">
+                <path d="M 0 10 A 1 1 90 0 0 0 -10 C -8 -10 -11 0 1 2 C 7 3 6 10 0 10 " fill="url(#bgyang)" />
+                <circle cx="-2.3" cy="-4.5" r="1" fill="url(#bgyin)" />
+            </g> -->
+            <path d="M 0 10 A 1 1 90 0 0 0 -10 C -8 -10 -11 0 1 2 C 7 3 6 10 0 10 " fill="url(#bgyang)"
+                filter="url(#f)" />
+            <circle cx="-2.3" cy="-4.5" r="1" fill="url(#bgyin)" />
+        </g>
+        <g id="yin">
+            <g filter="url(#shadow)">
+                <path d="M 0 10 A 1 1 0 0 1 0 -10 C -8 -10 -11 0 1 2 C 7 3 6 10 0 10" fill="url(#bgyin)" />
+                <circle cx="1" cy="6" r="1" fill="url(#bgyang)" />
+            </g>
+            <path d="M 0 10 A 1 1 0 0 1 0 -10 C -8 -10 -11 0 1 2 C 7 3 6 10 0 10" fill="url(#bgyin)" />
+            <circle cx="1" cy="6" r="1" fill="url(#bgyang)" />
+        </g>
+    </g>
+</svg>
